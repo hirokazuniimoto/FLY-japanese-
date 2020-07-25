@@ -381,11 +381,11 @@ ol{position: absolute;
 
           }
           else if ( finalTranscript.match(/洋楽/)){
-            const url2 = 'https://music.youtube.com/watch?v=RgKAFK5djSk&list=RDCLAK5uy_n2ipOr2Q74DIMfuWf5glzFgv4X1XZRTVA';
-            const url3 = 'https://music.youtube.com/watch?v=XBNvolY6dHw&list=RDAMVMXBNvolY6dHw';
-            var urls = [url2,url3];
-            var url = urls[Math.floor(Math.random()*urls.length];
-            window.open(url, '_blank');
+            let url2 = 'https://music.youtube.com/watch?v=RgKAFK5djSk&list=RDCLAK5uy_n2ipOr2Q74DIMfuWf5glzFgv4X1XZRTVA';
+        /*    let url3 = 'https://music.youtube.com/watch?v=XBNvolY6dHw&list=RDAMVMXBNvolY6dHw';
+            let urls = [url2,url3];
+            let url = urls[Math.floor(Math.random() * urls.length)];*/
+            window.open(url2, '_blank');
 
             //音声出力APIのインスタンス生成
             var synthes2 = new SpeechSynthesisUtterance();
@@ -413,16 +413,16 @@ ol{position: absolute;
 
 
           else if ( finalTranscript.match(/音楽/)){
-            const url1 = 'https://music.youtube.com/watch?v=EgGnreyPmaQ&list=RDCLAK5uy_l8AuRWbHKUUAYl8hHFs0Dybpuc6vzxoXs';
-            const url2 = 'https://music.youtube.com/watch?v=CS4f3jawFxY&list=RDCLAK5uy_mXVPog4cAEhi39RcmTCLhtbocf-DGa0jM';
-            const url3 = 'https://music.youtube.com/watch?v=qucqaX8AHeg&list=RDCLAK5uy_kvhjcPWzH7xZL-WnqGbiA_euQGy5_cbHI';
-            const url4 = 'https://music.youtube.com/watch?v=zgLAWm68XVg&list=RDCLAK5uy_k7wDaKweMyFw7tG8K2bFp00K2u4SN9Udg';
-            const url5 = 'https://music.youtube.com/watch?v=YqllOJ7ut10&list=RDCLAK5uy_khL5uRy4milJNYKDRwK571pXfYnshd16g';
-            const url6 = 'https://music.youtube.com/watch?v=yEA3qaB0dH8&list=RDMM'
+            let url1 = 'https://music.youtube.com/watch?v=EgGnreyPmaQ&list=RDCLAK5uy_l8AuRWbHKUUAYl8hHFs0Dybpuc6vzxoXs';
+  /*          let url2 = 'https://music.youtube.com/watch?v=CS4f3jawFxY&list=RDCLAK5uy_mXVPog4cAEhi39RcmTCLhtbocf-DGa0jM';
+            let url3 = 'https://music.youtube.com/watch?v=qucqaX8AHeg&list=RDCLAK5uy_kvhjcPWzH7xZL-WnqGbiA_euQGy5_cbHI';
+            let url4 = 'https://music.youtube.com/watch?v=zgLAWm68XVg&list=RDCLAK5uy_k7wDaKweMyFw7tG8K2bFp00K2u4SN9Udg';
+            let url5 = 'https://music.youtube.com/watch?v=YqllOJ7ut10&list=RDCLAK5uy_khL5uRy4milJNYKDRwK571pXfYnshd16g';
+            let url6 = 'https://music.youtube.com/watch?v=yEA3qaB0dH8&list=RDMM';
 
-            var urls = [url1,url2,url3,url4,url5,url6];
-            var url = urls[Math.floor(Math.random()*urls.length];
-            window.open(url, '_blank');
+            let urls = [url1,url2,url3,url4,url5,url6];
+            let url = urls[Math.floor(Math.random()*urls.length]; */
+            window.open(url1, '_blank');
 
             //音声出力APIのインスタンス生成
             var synthes2 = new SpeechSynthesisUtterance();
