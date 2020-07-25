@@ -380,6 +380,32 @@ ol{position: absolute;
             speechSynthesis.speak( synthes2 );
 
           }
+          else if ( finalTranscript.match(/BGM/)){
+            const url = 'https://music.youtube.com/watch?v=wVl2_RaQueM&list=PLzVx8uN-T8Q1Z1hjBkGHaPRVmqSYx7duh';
+            window.open(url, '_blank');
+
+            //音声出力APIのインスタンス生成
+            var synthes2 = new SpeechSynthesisUtterance();
+
+            //音声出力APIにパラメータを設定
+            synthes2.voiceURI = 2;            // 出力する音声の種類
+            synthes2.volume = 2;              // 出力する音声のボリューム
+            synthes2.rate = 1.4;                // 出力する音声の速さ
+            synthes2.pitch = 1;               // 出力する音声のピッチ(高さ)
+            //synthes.text = "for you sir always";     // 出力する文章
+            //synthes.text = "always a pleasure seeing you ,sir";
+            //synthes2.text = "OK! ";
+            //synthes2.lang = 'en-US';          // 出力する音声の言語
+            synthes2.text = "了解です！";     // 出力する文章
+            synthes2.lang = 'ja-JP';          // 出力する音声の言語
+
+            //synthes.text = "";     // 出力する文章
+            //synthes.lang = 'ja-JP';          // 出力する音声の言語
+
+            //音声出力
+            speechSynthesis.speak( synthes2 );
+
+          }
           else if ( finalTranscript.match(/洋楽/)){
             let url2 = 'https://music.youtube.com/watch?v=RgKAFK5djSk&list=RDCLAK5uy_n2ipOr2Q74DIMfuWf5glzFgv4X1XZRTVA';
         /*    let url3 = 'https://music.youtube.com/watch?v=XBNvolY6dHw&list=RDAMVMXBNvolY6dHw';
@@ -413,7 +439,7 @@ ol{position: absolute;
 
 
           else if ( finalTranscript.match(/音楽/)){
-            let url1 = 'https://music.youtube.com/watch?v=EgGnreyPmaQ&list=RDCLAK5uy_l8AuRWbHKUUAYl8hHFs0Dybpuc6vzxoXs';
+            let url1 = 'https://music.youtube.com/watch?v=UCMELvVeio4&list=PL94F3AAA0BF77B8F6';
   /*          let url2 = 'https://music.youtube.com/watch?v=CS4f3jawFxY&list=RDCLAK5uy_mXVPog4cAEhi39RcmTCLhtbocf-DGa0jM';
             let url3 = 'https://music.youtube.com/watch?v=qucqaX8AHeg&list=RDCLAK5uy_kvhjcPWzH7xZL-WnqGbiA_euQGy5_cbHI';
             let url4 = 'https://music.youtube.com/watch?v=zgLAWm68XVg&list=RDCLAK5uy_k7wDaKweMyFw7tG8K2bFp00K2u4SN9Udg';
