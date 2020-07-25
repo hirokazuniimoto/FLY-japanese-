@@ -439,7 +439,7 @@ ol{position: absolute;
 
 
           else if ( finalTranscript.match(/音楽/)){
-            let url1 = 'https://music.youtube.com/watch?v=UCMELvVeio4&list=PL94F3AAA0BF77B8F6';
+            let url1 = 'https://music.youtube.com/watch?v=UCMELvVeio4&list=PL94F3AAA0BF77B8F6'; //アジカン
   /*          let url2 = 'https://music.youtube.com/watch?v=CS4f3jawFxY&list=RDCLAK5uy_mXVPog4cAEhi39RcmTCLhtbocf-DGa0jM';
             let url3 = 'https://music.youtube.com/watch?v=qucqaX8AHeg&list=RDCLAK5uy_kvhjcPWzH7xZL-WnqGbiA_euQGy5_cbHI';
             let url4 = 'https://music.youtube.com/watch?v=zgLAWm68XVg&list=RDCLAK5uy_k7wDaKweMyFw7tG8K2bFp00K2u4SN9Udg';
@@ -528,7 +528,10 @@ ol{position: absolute;
             speechSynthesis.speak( synthes2 );
 
           }
+
+          setTimeout("location.reload()",15000);
         }
+
         resultDiv.innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</i>';
       }
 
