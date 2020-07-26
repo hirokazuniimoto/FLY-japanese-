@@ -577,7 +577,50 @@ ol{position: absolute;
 
           }
 
-          setTimeout("location.reload()",40000);
+          //アーティスト　試作
+
+          var artisturl = {
+               ミスチル: https://music.youtube.com/watch?v=9lVPAWLWtWc&list ,
+               ヨルシカ: https://music.youtube.com/watch?v=AOySfMfNMSA&list ,
+            }
+          var artistlist = [
+            "ミスチル",
+            "ヨルシカ",
+
+          ]
+          for (let i = 0; i < artistlist.length; i++) {
+            else if ( finalTranscript.match(/artistlist[i]/)){
+              const url = artisturl[artistlist[i]];
+              window.open(url, '_blank');
+
+              //音声出力APIのインスタンス生成
+              var synthes2 = new SpeechSynthesisUtterance();
+
+              //音声出力APIにパラメータを設定
+              synthes2.voiceURI = 2;            // 出力する音声の種類
+              synthes2.volume = 2;              // 出力する音声のボリューム
+              synthes2.rate = 1.4;                // 出力する音声の速さ
+              synthes2.pitch = 1;               // 出力する音声のピッチ(高さ)
+              //synthes.text = "for you sir always";     // 出力する文章
+              //synthes.text = "always a pleasure seeing you ,sir";
+              //synthes2.text = "OK! ";
+              //synthes2.lang = 'en-US';          // 出力する音声の言語
+              synthes2.text = "了解です！";     // 出力する文章
+              synthes2.lang = 'ja-JP';          // 出力する音声の言語
+
+              //synthes.text = "";     // 出力する文章
+              //synthes.lang = 'ja-JP';          // 出力する音声の言語
+
+              //音声出力
+              speechSynthesis.speak( synthes2 );
+
+              location.reload()
+
+            }
+          }
+          //アーティスト　ここまで
+
+
         }
 
         resultDiv.innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</i>';
@@ -592,6 +635,7 @@ ol{position: absolute;
 
 </script>
 
+<!-- 背景のアニメーション-->
 <script>
 var w = c.width = window.innerWidth,
         h = c.height = window.innerHeight,
