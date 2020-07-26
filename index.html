@@ -577,10 +577,9 @@ ol{position: absolute;
 
           }
 
-          else if ( finalTranscript.match(/エクスプローラー/)){
-            var openForlder = 'explorer.exe /n,/e,/root,';
-            var ActiveXobj = new ActiveXObject("WScript.Shell");
-            ActiveXobj.Run(openForlder);
+          else if ( finalTranscript.match(/フォルダ/)){
+            const url = 'file:///C:/Users/kazum/OneDrive/';
+            window.open(url, '_blank');
             //音声出力APIのインスタンス生成
             var synthes2 = new SpeechSynthesisUtterance();
 
