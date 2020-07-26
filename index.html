@@ -334,7 +334,7 @@ ol{position: absolute;
             location.reload();
 
           }
-          else if ( finalTranscript.match(/洋楽 リスト/)){
+          else if ( finalTranscript.match(/再生リスト/)){
             const url = 'https://www.youtube.com/watch?v=f5vdW0zyokI&list=PLs_k7zJ0XcV2e7fJBDYR4fwxw_cs-Uef2&index=1';
             window.open(url, '_blank');
 
@@ -418,8 +418,15 @@ ol{position: absolute;
             location.reload();
 
           }
-          else if ( finalTranscript.match(/BGM/)){
-            const url = 'https://music.youtube.com/watch?v=wVl2_RaQueM&list=PLzVx8uN-T8Q1Z1hjBkGHaPRVmqSYx7duh';
+          else if ( finalTranscript.match(/サウンドトラック/)){
+            urls = [
+              'https://music.youtube.com/watch?v=YlsQ6hjSZ8A&list=RDAMVMYlsQ6hjSZ8A',//ironman
+              'https://music.youtube.com/watch?v=b133aE8xWBQ&list=RDAMVMb133aE8xWBQ',//naruto
+
+            ]
+            let url = urls[Math.floor(Math.random() * urls.length)];
+            window.open(url, '_blank');
+
             window.open(url, '_blank');
 
             //音声出力APIのインスタンス生成
@@ -446,12 +453,95 @@ ol{position: absolute;
             location.reload();
 
           }
+          else if ( finalTranscript.match(/BGM/)){
+            urls = [
+              'https://music.youtube.com/watch?v=wVl2_RaQueM&list=PLzVx8uN-T8Q1Z1hjBkGHaPRVmqSYx7duh',
+              'https://music.youtube.com/watch?v=umwcs8CoeAM&list=RDAMVMumwcs8CoeAM',
+              'https://music.youtube.com/watch?v=wJhrKW7KBgE&list=RDAMVMumwcs8CoeAM',
+              'https://music.youtube.com/watch?v=anthqtxPkys&list=RDAMVManthqtxPkys',
+              'https://music.youtube.com/watch?v=_RD8BQ-fLMM&list=RDAMVM_RD8BQ-fLMM',
+              'https://music.youtube.com/watch?v=xFCaU9IPyd8&list=RDAMVMxFCaU9IPyd8',
+
+            ]
+            let url = urls[Math.floor(Math.random() * urls.length)];
+            window.open(url, '_blank');
+
+            window.open(url, '_blank');
+
+            //音声出力APIのインスタンス生成
+            var synthes2 = new SpeechSynthesisUtterance();
+
+            //音声出力APIにパラメータを設定
+            synthes2.voiceURI = 2;            // 出力する音声の種類
+            synthes2.volume = 2;              // 出力する音声のボリューム
+            synthes2.rate = 1.4;                // 出力する音声の速さ
+            synthes2.pitch = 1;               // 出力する音声のピッチ(高さ)
+            //synthes.text = "for you sir always";     // 出力する文章
+            //synthes.text = "always a pleasure seeing you ,sir";
+            //synthes2.text = "OK! ";
+            //synthes2.lang = 'en-US';          // 出力する音声の言語
+            synthes2.text = "了解です！";     // 出力する文章
+            synthes2.lang = 'ja-JP';          // 出力する音声の言語
+
+            //synthes.text = "";     // 出力する文章
+            //synthes.lang = 'ja-JP';          // 出力する音声の言語
+
+            //音声出力
+            speechSynthesis.speak( synthes2 );
+
+            location.reload();
+
+          }
+          else if ( finalTranscript.match(/曲/)){
+            var data = [
+              'https://music.youtube.com/watch?v=ad9O07zsqnY&list=PLAq_cRundDd6__ricYmfjGfNhYB6rO3UM', //アジカン1
+              'https://music.youtube.com/watch?v=Aq6gMHBobcA&list=PLOhZV6y-1RlOknTFHBSBdaQZTlS5XIRA4',//アジカン２
+              'https://music.youtube.com/watch?v=BCt9lS_Uv_Y&list=PLlBDt7gH3hiYJZrkkqK5tYYXbwbM2YyLJ',//ヨルシカ
+              'https://music.youtube.com/watch?v=U6IgltZmRbM&list=PLe5HBuHXrwaiXpp9NnGRDaUlv04f_Tjtb',//nico touch
+              'https://music.youtube.com/watch?v=J5Z7tIq7bco&list=PLJ2fdX2RRKzUbAv1Q9PFDzy7XeXSsMWtR',//スキマスイッチ
+              'https://music.youtube.com/watch?v=YnvDsYcEsbI&list=PLHZln64kZRVIG4V9jGO-GEySeeuFXP5Bo',//road of major
+              'https://music.youtube.com/watch?v=LgLMA1MR7iE&list=PLHcJQn3tSs7g9BRElcM7sUNByuddKj3Ir', //back number
+              'https://music.youtube.com/watch?v=zfkK6LzduSA&list=RDAMVMzfkK6LzduSA',//garnet crow
+              'https://music.youtube.com/watch?v=n5TG3Fxzft0&list=PLI-RxjqqZP0s5mlYy-iVyC9rfT-q0bU9V',//anison
+
+            ] ;
+            let url = data[Math.floor(Math.random()*data.length)];
+            window.open(url, '_blank');
+
+            //音声出力APIのインスタンス生成
+            var synthes2 = new SpeechSynthesisUtterance();
+
+            //音声出力APIにパラメータを設定
+            synthes2.voiceURI = 2;            // 出力する音声の種類
+            synthes2.volume = 2;              // 出力する音声のボリューム
+            synthes2.rate = 1.4;                // 出力する音声の速さ
+            synthes2.pitch = 1;               // 出力する音声のピッチ(高さ)
+            //synthes.text = "for you sir always";     // 出力する文章
+            //synthes.text = "always a pleasure seeing you ,sir";
+            //synthes2.text = "OK! ";
+            //synthes2.lang = 'en-US';          // 出力する音声の言語
+            synthes2.text = "了解です！";     // 出力する文章
+            synthes2.lang = 'ja-JP';          // 出力する音声の言語
+
+            //synthes.text = "";     // 出力する文章
+            //synthes.lang = 'ja-JP';          // 出力する音声の言語
+
+            //音声出力
+            speechSynthesis.speak( synthes2 );
+
+            location.reload();
+
+          }
+
           else if ( finalTranscript.match(/洋楽/)){
-            let url2 = 'https://music.youtube.com/watch?v=RgKAFK5djSk&list=RDCLAK5uy_n2ipOr2Q74DIMfuWf5glzFgv4X1XZRTVA';
-        /*    let url3 = 'https://music.youtube.com/watch?v=XBNvolY6dHw&list=RDAMVMXBNvolY6dHw';
-            let urls = [url2,url3];
-            let url = urls[Math.floor(Math.random() * urls.length)];*/
-            window.open(url2, '_blank');
+            urls = [
+              'https://www.youtube.com/watch?v=f5vdW0zyokI&list=PLs_k7zJ0XcV2e7fJBDYR4fwxw_cs-Uef2&index=1',
+              'https://music.youtube.com/watch?v=RgKAFK5djSk&list=RDCLAK5uy_n2ipOr2Q74DIMfuWf5glzFgv4X1XZRTVA',
+              'https://music.youtube.com/watch?v=XBNvolY6dHw&list=RDAMVMXBNvolY6dHw',
+              'https://music.youtube.com/watch?v=Kt-tLuszKBA&list=RDAMVMKt-tLuszKBA',
+            ]
+            let url = urls[Math.floor(Math.random() * urls.length)];
+            window.open(url, '_blank');
 
             //音声出力APIのインスタンス生成
             var synthes2 = new SpeechSynthesisUtterance();
@@ -481,16 +571,15 @@ ol{position: absolute;
 
 
           else if ( finalTranscript.match(/音楽/)){
-            let url1 = 'https://music.youtube.com/watch?v=UCMELvVeio4&list=PL94F3AAA0BF77B8F6'; //アジカン
-  /*          let url2 = 'https://music.youtube.com/watch?v=CS4f3jawFxY&list=RDCLAK5uy_mXVPog4cAEhi39RcmTCLhtbocf-DGa0jM';
-            let url3 = 'https://music.youtube.com/watch?v=qucqaX8AHeg&list=RDCLAK5uy_kvhjcPWzH7xZL-WnqGbiA_euQGy5_cbHI';
-            let url4 = 'https://music.youtube.com/watch?v=zgLAWm68XVg&list=RDCLAK5uy_k7wDaKweMyFw7tG8K2bFp00K2u4SN9Udg';
-            let url5 = 'https://music.youtube.com/watch?v=YqllOJ7ut10&list=RDCLAK5uy_khL5uRy4milJNYKDRwK571pXfYnshd16g';
-            let url6 = 'https://music.youtube.com/watch?v=yEA3qaB0dH8&list=RDMM';
-
-            let urls = [url1,url2,url3,url4,url5,url6];
-            let url = urls[Math.floor(Math.random()*urls.length]; */
-            window.open(url1, '_blank');
+            var data = [
+            'https://music.youtube.com/watch?v=CS4f3jawFxY&list=RDCLAK5uy_mXVPog4cAEhi39RcmTCLhtbocf-DGa0jM',
+            'https://music.youtube.com/watch?v=qucqaX8AHeg&list=RDCLAK5uy_kvhjcPWzH7xZL-WnqGbiA_euQGy5_cbHI',
+            'https://music.youtube.com/watch?v=zgLAWm68XVg&list=RDCLAK5uy_k7wDaKweMyFw7tG8K2bFp00K2u4SN9Udg',
+            'https://music.youtube.com/watch?v=YqllOJ7ut10&list=RDCLAK5uy_khL5uRy4milJNYKDRwK571pXfYnshd16g',
+            'https://music.youtube.com/watch?v=yEA3qaB0dH8&list=RDMM',
+            ] ;
+            let url = data[Math.floor(Math.random()*data.length)];
+            window.open(url, '_blank');
 
             //音声出力APIのインスタンス生成
             var synthes2 = new SpeechSynthesisUtterance();
@@ -546,6 +635,36 @@ ol{position: absolute;
 
           }
 
+          else if ( finalTranscript.match(/Gmail/)){
+            const url = 'https://mail.google.com/mail/u/0/?pli=1#inbox';
+            window.open(url, '_blank');
+
+            //音声出力APIのインスタンス生成
+            var synthes2 = new SpeechSynthesisUtterance();
+
+            //音声出力APIにパラメータを設定
+            synthes2.voiceURI = 2;            // 出力する音声の種類
+            synthes2.volume = 2;              // 出力する音声のボリューム
+            synthes2.rate = 1.4;                // 出力する音声の速さ
+            synthes2.pitch = 1;               // 出力する音声のピッチ(高さ)
+            //synthes.text = "for you sir always";     // 出力する文章
+            //synthes.text = "always a pleasure seeing you ,sir";
+            //synthes2.text = "OK! ";
+            //synthes2.lang = 'en-US';          // 出力する音声の言語
+            synthes2.text = "了解です！";     // 出力する文章
+            synthes2.lang = 'ja-JP';          // 出力する音声の言語
+
+            //synthes.text = "";     // 出力する文章
+            //synthes.lang = 'ja-JP';          // 出力する音声の言語
+
+            //音声出力
+            speechSynthesis.speak( synthes2 );
+
+            location.reload();
+
+          }
+
+
 
           else if ( finalTranscript.match(/翻訳/)){
             const url = 'https://www.google.com/search?sxsrf=ALeKk029K5JKuBaTfxrEr7Q9FeKo-Jiwlw%3A1594909252729&ei=RGIQX-aILOitmAW-j4GwDQ&q=%E7%BF%BB%E8%A8%B3&oq=%E7%BF%BB%E8%A8%B3&gs_lcp=CgZwc3ktYWIQAzIECCMQJzIECCMQJzIECCMQJzIMCAAQsQMQsQMQBBAlMgYIABAEECUyDAgAELEDELEDEAQQJTIGCAAQBBAlMgYIABAEECU6BggAEAcQHjoICAAQCBAKEB46BggAEAgQHlDLwc_PAljLwc_PAmCCw8_PAmgBcAB4AIABggKIAYEEkgEFMC4yLjGYAQCgAQGqAQdnd3Mtd2l6&sclient=psy-ab&ved=0ahUKEwjmutT7-9HqAhXoFqYKHb5HANYQ4dUDCAw&uact=5';
@@ -577,33 +696,7 @@ ol{position: absolute;
 
           }
 
-          else if ( finalTranscript.match(/フォルダ/)){
-            const url = 'file:///C:/Users/kazum/OneDrive/';
-            window.open(url, '_blank');
-            //音声出力APIのインスタンス生成
-            var synthes2 = new SpeechSynthesisUtterance();
 
-            //音声出力APIにパラメータを設定
-            synthes2.voiceURI = 2;            // 出力する音声の種類
-            synthes2.volume = 2;              // 出力する音声のボリューム
-            synthes2.rate = 1.4;                // 出力する音声の速さ
-            synthes2.pitch = 1;               // 出力する音声のピッチ(高さ)
-            //synthes.text = "for you sir always";     // 出力する文章
-            //synthes.text = "always a pleasure seeing you ,sir";
-            //synthes2.text = "OK! ";
-            //synthes2.lang = 'en-US';          // 出力する音声の言語
-            synthes2.text = "了解です！";     // 出力する文章
-            synthes2.lang = 'ja-JP';          // 出力する音声の言語
-
-            //synthes.text = "";     // 出力する文章
-            //synthes.lang = 'ja-JP';          // 出力する音声の言語
-
-            //音声出力
-            speechSynthesis.speak( synthes2 );
-
-            location.reload();
-
-          }
 
           //アーティスト　試作
           /*
