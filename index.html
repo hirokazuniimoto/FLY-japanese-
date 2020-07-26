@@ -231,7 +231,7 @@ ol{position: absolute;
 
       recognition.lang = 'ja-JP';
       recognition.interimResults = true;
-      //recognition.continuous = true;
+      recognition.continuous = true;
 
       let finalTranscript = ''; // 確定した(黒の)認識結果
 
@@ -356,6 +356,32 @@ ol{position: absolute;
           }
           else if ( finalTranscript.match(/Amazon Music/)){
             const url = 'https://music.amazon.co.jp/playlists';
+            window.open(url, '_blank');
+
+            //音声出力APIのインスタンス生成
+            var synthes2 = new SpeechSynthesisUtterance();
+
+            //音声出力APIにパラメータを設定
+            synthes2.voiceURI = 2;            // 出力する音声の種類
+            synthes2.volume = 2;              // 出力する音声のボリューム
+            synthes2.rate = 1.4;                // 出力する音声の速さ
+            synthes2.pitch = 1;               // 出力する音声のピッチ(高さ)
+            //synthes.text = "for you sir always";     // 出力する文章
+            //synthes.text = "always a pleasure seeing you ,sir";
+            //synthes2.text = "OK! ";
+            //synthes2.lang = 'en-US';          // 出力する音声の言語
+            synthes2.text = "了解です！";     // 出力する文章
+            synthes2.lang = 'ja-JP';          // 出力する音声の言語
+
+            //synthes.text = "";     // 出力する文章
+            //synthes.lang = 'ja-JP';          // 出力する音声の言語
+
+            //音声出力
+            speechSynthesis.speak( synthes2 );
+
+          }
+          else if ( finalTranscript.match(/Twitter/)){
+            const url = 'https://twitter.com/home?lang=ja';
             window.open(url, '_blank');
 
             //音声出力APIのインスタンス生成
@@ -529,7 +555,7 @@ ol{position: absolute;
 
           }
 
-          setTimeout("location.reload()",10000);
+          setTimeout("location.reload()",40000);
         }
 
         resultDiv.innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</i>';
