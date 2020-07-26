@@ -579,18 +579,19 @@ ol{position: absolute;
 
           //アーティスト　試作
 
-          var artisturl = {
-               ミスチル: https://music.youtube.com/watch?v=9lVPAWLWtWc&list ,
-               ヨルシカ: https://music.youtube.com/watch?v=AOySfMfNMSA&list ,
-            }
+          var artisturl = [
+               "ミスチル": https://music.youtube.com/watch?v=9lVPAWLWtWc&list ,
+               "ヨルシカ": https://music.youtube.com/watch?v=AOySfMfNMSA&list ,
+            ];
           var artistlist = [
             "ミスチル",
             "ヨルシカ",
 
-          ]
+          ];
           for (let i = 0; i < artistlist.length; i++) {
             else if ( finalTranscript.match(/artistlist[i]/)){
-              const url = artisturl[artistlist[i]];
+              var artist = artistlist[i];
+              const url = artisturl[artist];
               window.open(url, '_blank');
 
               //音声出力APIのインスタンス生成
