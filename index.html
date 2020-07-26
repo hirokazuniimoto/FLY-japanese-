@@ -589,7 +589,7 @@ ol{position: absolute;
 
           ];
           for (let i = 0; i < artistlist.length; i++) {
-            else if ( finalTranscript.match(/artistlist[i]/)){
+            if ( finalTranscript.match(/artistlist[i]/)){
               var artist = artistlist[i];
               const url = artisturl[artist];
               window.open(url, '_blank');
