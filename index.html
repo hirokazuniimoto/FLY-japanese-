@@ -831,6 +831,35 @@ ol{position: absolute;
             location.reload();
           }
 
+          else if ( finalTranscript.match(/新規ウィンドウ/)){
+            window.open('https://hirokazuniimoto.github.io/FLY-japanese-/', 'newwindow', 'width=700,height=600,top=20,left=1550');
+
+
+            //音声出力APIのインスタンス生成
+            var synthes2 = new SpeechSynthesisUtterance();
+
+            //音声出力APIにパラメータを設定
+            synthes2.voiceURI = 2;            // 出力する音声の種類
+            synthes2.volume = 2;              // 出力する音声のボリューム
+            synthes2.rate = 1.4;                // 出力する音声の速さ
+            synthes2.pitch = 1;               // 出力する音声のピッチ(高さ)
+            //synthes.text = "for you sir always";     // 出力する文章
+            //synthes.text = "always a pleasure seeing you ,sir";
+            //synthes2.text = "OK! ";
+            //synthes2.lang = 'en-US';          // 出力する音声の言語
+            synthes2.text = "新規ウィンドウを開きます！";     // 出力する文章
+            synthes2.lang = 'ja-JP';          // 出力する音声の言語
+
+            //synthes.text = "";     // 出力する文章
+            //synthes.lang = 'ja-JP';          // 出力する音声の言語
+
+            //音声出力
+            speechSynthesis.speak( synthes2 );
+
+            location.reload();
+
+          }
+
 
 
           //アーティスト　試作
