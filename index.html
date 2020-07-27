@@ -283,7 +283,7 @@ ol{position: absolute;
             //音声出力
             speechSynthesis.speak( synthes2 );
 
-            window.close();
+            location.reload();
 
           }
 
@@ -313,7 +313,7 @@ ol{position: absolute;
             //音声出力
             speechSynthesis.speak( synthes2 );
 
-            window.close();
+            location.reload();
 
           }
 
@@ -342,7 +342,7 @@ ol{position: absolute;
             //音声出力
             speechSynthesis.speak( synthes2 );
 
-            window.close();
+            location.reload();
 
           }
           else if ( finalTranscript.match(/再生リスト/)){
@@ -370,7 +370,7 @@ ol{position: absolute;
             //音声出力
             speechSynthesis.speak( synthes2 );
 
-            window.close();
+            location.reload();
 
           }
           else if ( finalTranscript.match(/Amazon Music/)){
@@ -398,7 +398,7 @@ ol{position: absolute;
             //音声出力
             speechSynthesis.speak( synthes2 );
 
-            window.close();
+            location.reload();
 
           }
           else if ( finalTranscript.match(/Twitter/)){
@@ -426,7 +426,7 @@ ol{position: absolute;
             //音声出力
             speechSynthesis.speak( synthes2 );
 
-            window.close();
+            location.reload();
 
           }
           else if ( finalTranscript.match(/サウンドトラック/)){
@@ -461,7 +461,7 @@ ol{position: absolute;
             //音声出力
             speechSynthesis.speak( synthes2 );
 
-            window.close();
+            location.reload();
 
           }
           else if ( finalTranscript.match(/BGM/)){
@@ -500,7 +500,7 @@ ol{position: absolute;
             //音声出力
             speechSynthesis.speak( synthes2 );
 
-            window.close();
+            location.reload();
 
           }
           else if ( finalTranscript.match(/曲/)){
@@ -540,7 +540,7 @@ ol{position: absolute;
             //音声出力
             speechSynthesis.speak( synthes2 );
 
-            window.close();
+            location.reload();
 
           }
 
@@ -575,7 +575,7 @@ ol{position: absolute;
             //音声出力
             speechSynthesis.speak( synthes2 );
 
-            window.close();
+            location.reload();
 
           }
 
@@ -613,7 +613,8 @@ ol{position: absolute;
             //音声出力
             speechSynthesis.speak( synthes2 );
 
-            window.close();
+            location.reload();
+
 
           }
 
@@ -642,7 +643,7 @@ ol{position: absolute;
             //音声出力
             speechSynthesis.speak( synthes2 );
 
-            window.close();
+            location.reload();
 
           }
 
@@ -671,7 +672,7 @@ ol{position: absolute;
             //音声出力
             speechSynthesis.speak( synthes2 );
 
-            window.close();
+            location.reload();
 
           }
 
@@ -700,7 +701,7 @@ ol{position: absolute;
             //音声出力
             speechSynthesis.speak( synthes2 );
 
-            window.close();
+            location.reload();
 
           }
 
@@ -732,11 +733,11 @@ ol{position: absolute;
             //音声出力
             speechSynthesis.speak( synthes2 );
 
-            window.close();
+            location.reload();
 
           }
           else if ( finalTranscript.match(/天気/)){
-            const url = 'https://weathernews.jp/onebox/34.71/135.27/temp=c';
+            const url = 'https://weathernews.jp/onebox/34.700312/135.142921/q=%E5%85%B5%E5%BA%AB%E7%9C%8C%E7%A5%9E%E6%88%B8%E5%B8%82&v=55de912b81668726db09e8d88c998735065f7c6949921b6869818675c962c842&temp=c&lang=ja';
             window.open(url, '_blank');
 
 
@@ -762,7 +763,7 @@ ol{position: absolute;
             //音声出力
             speechSynthesis.speak( synthes2 );
 
-            window.close();
+            location.reload();
 
           }
           else if ( finalTranscript.match(/マルチエンジン/)){
@@ -792,7 +793,7 @@ ol{position: absolute;
             //音声出力
             speechSynthesis.speak( synthes2 );
 
-            window.close();
+            location.reload();
 
           }
           else if ( finalTranscript.match(/ニュース/)){
@@ -822,100 +823,10 @@ ol{position: absolute;
             //音声出力
             speechSynthesis.speak( synthes2 );
 
-            window.close();
+            location.reload();
 
           }
-          else if ( finalTranscript.match(/おはよう/)){
 
-            window.open('https://hirokazuniimoto.github.io/FLY-japanese-/', 'newwindow4', 'width=700,height=600,top=20,left=1550');
-            window.open('http://multisearchengines.herokuapp.com/', 'newwindow3', 'width=1200,height=600,top=20,left=20');
-            window.open('https://weathernews.jp/onebox/34.700312/135.142921/q=%E5%85%B5%E5%BA%AB%E7%9C%8C%E7%A5%9E%E6%88%B8%E5%B8%82&v=55de912b81668726db09e8d88c998735065f7c6949921b6869818675c962c842&temp=c&lang=ja', 'newwindow1', 'width=950,height=600,top=0,left=80');
-            window.open('https://news.yahoo.co.jp/', 'newwindow2', 'width=950,height=600,top=50,left=190');
-            window.open('https://abema.tv/now-on-air/abema-news', 'newwindow5', 'width=950,height=600,top=20,left=550');
-
-            //音声出力APIのインスタンス生成
-            var synthes2 = new SpeechSynthesisUtterance();
-            var today = new Date();
-            var weekDay = ["日", "月", "火", "水", "木", "金", "土"];
-
-            //openweathermap（天気予報API）に接続
-            /*var request = new XMLHttpRequest();
-            var cityName = "kobe";
-            var owmApiKey = "03c38a8616654bf6a0c0712097fe73da";
-            var owmURL = "http://api.openweathermap.org/data/2.5/weather?q="+ cityName +"&APPID="+ owmApiKey ;*/
-
-
-            //openweathermap（天気予報API）に接続
-          /*  var request = new XMLHttpRequest();
-            var cityName = "kobe";
-            var owmApiKey = "03c38a8616654bf6a0c0712097fe73da";
-            var owmURL = "http://api.openweathermap.org/data/2.5/weather?q="+ cityName +"&APPID="+ owmApiKey;
-
-            request.open('GET', owmURL, true);
-            //結果をjson型で受け取る
-            request.responseType = 'json';
-
-            var data = this.response;
-
-            var data_weather =data["weather"][0]["main"] ;
-            var data_temp=data["main"]["temp"];
-
-            var weather="";
-            switch (data_weather){
-              case 'Clear':
-              weather="晴れ";
-              break;
-              case 'Clouds':
-              weather="曇り";
-              break;
-              case 'Snow':
-              weather="雪";
-              break;
-              case 'Rain':
-              weather="雨"
-              break;
-              case 'Fog':
-              weather="霧";
-              break;
-              case 'Mist':
-              weather="霧";
-              break;
-              case 'Haze':
-              weather="もや";
-              break;
-            }
-
-            */
-            var year=today.getFullYear();
-            var month=today.getMonth()+1;
-            var day = today.getDate();
-            var week =weekDay[today.getDay()];
-
-            //音声出力APIにパラメータを設定
-            synthes2.voiceURI = 2;            // 出力する音声の種類
-            synthes2.volume = 2;              // 出力する音声のボリューム
-            synthes2.rate = 1.5;                // 出力する音声の速さ
-            synthes2.pitch = 1;               // 出力する音声のピッチ(高さ)
-            //synthes.text = "for you sir always";     // 出力する文章
-            //synthes.text = "always a pleasure seeing you ,sir";
-
-            //synthes.text = "welcome you sir!, always a pleasure seeing you !!";
-            //synthes.lang = 'en-US';          // 出力する音声の言語
-
-            //synthes2.text = "おはようございます！"+year+"ねん"+month+"がつ"+day+"にち"+week+"曜日です。";
-            synthes2.text = "おはようございます！"+year+"ねん,"+month+"がつ,"+day+"にち,"+week+"曜日、本日のニュース、神戸市の天気、および開発環境を表示します。ご用があればいつでもおっしゃってください！";     // 出力する文章
-            synthes2.lang = 'ja-JP';          // 出力する音声の言語
-
-            //document.write("welcome you sir! always a pleasure seeing you !!");
-
-            //音声出力
-            speechSynthesis.speak( synthes2 );
-
-
-
-            window.close();
-
-          }
           else if ( finalTranscript.match(/ミュート/)){
             location.reload();
           }
