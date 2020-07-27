@@ -438,8 +438,6 @@ ol{position: absolute;
             let url = urls[Math.floor(Math.random() * urls.length)];
             window.open(url, '_blank');
 
-            window.open(url, '_blank');
-
             //音声出力APIのインスタンス生成
             var synthes2 = new SpeechSynthesisUtterance();
 
@@ -475,8 +473,6 @@ ol{position: absolute;
 
             ]
             let url = urls[Math.floor(Math.random() * urls.length)];
-            window.open(url, '_blank');
-
             window.open(url, '_blank');
 
             //音声出力APIのインスタンス生成
@@ -754,7 +750,7 @@ ol{position: absolute;
             //synthes2.text = "OK! ";
             //synthes2.lang = 'en-US';
                    // 出力する音声の言語
-            synthes2.text = "本日の神戸市東灘区の天気です！";     // 出力する文章
+            synthes2.text = "本日の神戸市の天気です！";     // 出力する文章
             synthes2.lang = 'ja-JP';          // 出力する音声の言語
 
             //synthes.text = "";     // 出力する文章
