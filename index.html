@@ -38,6 +38,7 @@ ol{position: absolute;
     background-size:100% auto;/*この場合は高さが自動設定*/
     background-size:auto 100%;/*この場合は幅が自動設定*/
 /*    background-size: cover;*/
+    background-color: black;
     }
     h1 {text-shadow:6px 6px 2px black;
         text-align:right;
@@ -45,7 +46,7 @@ ol{position: absolute;
     p{color: black;}
 /*    p {text-shadow:5px 5px 3px black;} */
     .link {/*text-shadow: 4px 4px 10px black; */
-      position: fixed;
+      position: absolute;
       bottom: 20px; right: 20px;
        color:white;
       font-size: 30px;}
@@ -53,7 +54,7 @@ ol{position: absolute;
       position: absolute;
        color:white;} 　
     .link4 {/*text-shadow: 4px 4px 10px black;*/
-
+      font-size: 30px;
        color:white;}
     .link3 {color:black;}
 
@@ -65,6 +66,41 @@ ol{position: absolute;
          }
     .mozi{color:white;
           }
+    .mozi2{color:white;
+          position: absolute;
+          bottom: 0px;
+                }
+    .botan2{
+            color:white;
+                        /*transform: translate(-50%, -50%);*/
+                        /*opacity:0.3;*/
+               background-color: rgba( 100, 100, 220, 0.55 );
+                        }
+    .name{color:white;
+        font-size:25px;
+                      }
+      .requestlist{
+          color:white;
+      font-size:25px;
+      color:black;
+                }
+      .newrequest{
+        color:red;
+        font-size:25px;
+
+                }
+    .title{
+        text-align:center;
+    font-size: 30px;
+          color: white;
+                }
+      .youso{
+        background-color: rgba(204, 255, 204, 0.55 );
+        color: white;
+            }
+
+
+
 
 
 
@@ -92,13 +128,14 @@ ol{position: absolute;
   background-size:100% auto;/*この場合は高さが自動設定*/
  background-size:auto 100%;/*この場合は幅が自動設定*/
  background-size: cover;
+ background-color: black;
   }
   h1{text-align:center;
     text-shadow:8px 8px 5px black;}
   p{color:white;
     text-shadow:8px 8px 5px black;}
     .link {/*text-shadow: 4px 4px 10px black; */
-      position: fixed;
+
       bottom: 20px; right: 20px;
        color:white;
       font-size: 20px;}
@@ -111,9 +148,9 @@ ol{position: absolute;
        color:white;}
     .link3 {color:black;}
 
-    .botan{height:150px;
-
-          position: fixed;
+    .botan{
+          position: absolute;
+          height:150px;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
@@ -124,9 +161,43 @@ ol{position: absolute;
          }
     .mozi{color:white;
           font-size: 20px;
-          position: fixed;
+
           bottom: 55px;;
           }
+
+          .mozi2{color:white;
+                position: absolute;
+                bottom: 0px;
+                      }
+          .botan2{
+                  color:white;
+                              /*transform: translate(-50%, -50%);*/
+                              /*opacity:0.3;*/
+                     background-color: rgba( 100, 100, 220, 0.55 );
+                              }
+          .name{color:white;
+              font-size:25px;
+                            }
+            .requestlist{
+                color:white;
+            font-size:25px;
+            color:black;
+                      }
+            .newrequest{
+              color:red;
+              font-size:25px;
+
+                      }
+          .title{
+              text-align:center;
+          font-size: 30px;
+                color: white;
+                      }
+            .youso{
+              background-color: rgba(204, 255, 204, 0.55 );
+              color: white;
+                  }
+
 
 
   canvas {
@@ -179,10 +250,56 @@ ol{position: absolute;
 <p class="col-lg-3 pt-5"></p>
 <div id="result-div" class="mozi col-lg-6 display-4  text-center pb-5 mt-5"></div>
 <p class="col-lg-3 pt-5"></p>
+</div>
+
+<p class="pt-5"></p>
+
+<div class="row pt-5 mt-5">
+<p class="col-lg-3 "></p>
+<p class="mozi col-lg-6 display-4  text-center">指示・命令を追加</p>
+<p class="col-lg-3 "></p>
+</div>
+
+
+<div class="form-group row pt-4">
+<label class="col-3 name" for="name"><span>Request</span></label>
+<input name="mydata_in1" id="mydata_in1" type="text" class="form-control col-6 area" placeholder="Write your request " type="text" value="" />
+<p class="col-3"></p>
+</div>
+
+<div class="form-group row">
+<label class="col-3 name" for="name"><span>URL</span></label>
+<input name="mydata_in2" class="form-control col-6 area" id="mydata_in2" placeholder="Write URL " type="text" value="" />
+<p class="col-3"></p>
+</div>
+
+<div class="row ">
+<p class="col-2 pt-1"></p>
+<input type="button" class="col-2 text-center botan2 btn btn-primary   mt-3 w-25" value="保存" onclick="save();"/>
+<p class="col-1 pt-"></p>
+<input type="button"  class="col-2 text-center botan2 btn btn-primary   mt-3 w-25" value="消去" onclick="remove();"/>
+<p class="col-1 pt-"></p>
+<input type="button" class="col-2 text-center botan2 btn btn-primary   mt-3 w-25" value="初期化" onclick="reset();"/>
+<p class="col-2"></p>
+</div>
+
+<div class="card  mt-5 youso">
+<div class="card-header">
+<h1 class="card-title title"><span>追加命令一覧</span></h1>
+</div>
+<div class="card-body">
+<div id="mydata_out2" class="pt- newrequest"></div>
+<div id="mydata_out" class="pt-2 requestlist"></div>
+</div>
+</div>
+
+<p class="pt-5"></p>
 
 <!--<p class="display-4 text-dark text-center pb-5 mt-5">welcome you sir, always a pleasure seeing you </p>-->
 
-<a href="https://hirokazuniimoto.github.io/FLY-English-/" class=" mt-4  link text-light text-center" rel="nofollow">English ver</a>
+
+<a href="https://hirokazuniimoto.github.io/FLY-English-/" class="pt-5 mt-5 link float-right" rel="nofollow">English ver</a>
+
 
 <!-- javascript-->
 <script>
@@ -255,7 +372,41 @@ ol{position: absolute;
           } else {
             interimTranscript = transcript;
           }
-          if ( finalTranscript.match(/検索/)){
+
+          if ( finalTranscript.match(/YouTube/) && finalTranscript.match(/検索/)){
+            var rusult;
+            result="https://www.youtube.com/results?search_query=";
+            var word = finalTranscript.slice( 9, -3 ) ;
+            var url = result+word;
+            window.open(url, '_blank');
+
+
+             //音声出力APIのインスタンス生成
+             var synthes2 = new SpeechSynthesisUtterance();
+
+             //音声出力APIにパラメータを設定
+             synthes2.voiceURI = 2;            // 出力する音声の種類
+             synthes2.volume = 2;              // 出力する音声のボリューム
+             synthes2.rate = 1.4;                // 出力する音声の速さ
+             synthes2.pitch = 1;               // 出力する音声のピッチ(高さ)
+             //synthes.text = "for you sir always";     // 出力する文章
+             //synthes.text = "always a pleasure seeing you ,sir";
+             //synthes2.text = "OK! ";
+             //synthes2.lang = 'en-US';          // 出力する音声の言語
+             synthes2.text = "了解です！";     // 出力する文章
+             synthes2.lang = 'ja-JP';          // 出力する音声の言語
+
+             //synthes.text = "";     // 出力する文章
+             //synthes.lang = 'ja-JP';          // 出力する音声の言語
+
+             //音声出力
+             speechSynthesis.speak( synthes2 );
+
+             location.reload();
+
+           }
+
+          else if ( finalTranscript.match(/検索/)){
             var rusult;
             result="https://www.google.co.jp/search?hl=ja&source=hp&q=";
             var word = finalTranscript.slice( 0, -3 ) ;
@@ -345,277 +496,9 @@ ol{position: absolute;
             location.reload();
 
           }
-          else if ( finalTranscript.match(/再生リスト/)){
-            const url = 'https://www.youtube.com/watch?v=f5vdW0zyokI&list=PLs_k7zJ0XcV2e7fJBDYR4fwxw_cs-Uef2&index=1';
-            window.open(url, '_blank');
 
-            //音声出力APIのインスタンス生成
-            var synthes2 = new SpeechSynthesisUtterance();
-
-            //音声出力APIにパラメータを設定
-            synthes2.voiceURI = 2;            // 出力する音声の種類
-            synthes2.volume = 2;              // 出力する音声のボリューム
-            synthes2.rate = 1.4;                // 出力する音声の速さ
-            synthes2.pitch = 1;               // 出力する音声のピッチ(高さ)
-            //synthes.text = "for you sir always";     // 出力する文章
-            //synthes.text = "always a pleasure seeing you ,sir";
-            //synthes2.text = "OK! ";
-            //synthes2.lang = 'en-US';          // 出力する音声の言語
-            synthes2.text = "了解です！";     // 出力する文章
-            synthes2.lang = 'ja-JP';          // 出力する音声の言語
-
-            //synthes.text = "";     // 出力する文章
-            //synthes.lang = 'ja-JP';          // 出力する音声の言語
-
-            //音声出力
-            speechSynthesis.speak( synthes2 );
-
-            location.reload();
-
-          }
-          else if ( finalTranscript.match(/Amazon Music/)){
-            const url = 'https://music.amazon.co.jp/playlists';
-            window.open(url, '_blank');
-
-            //音声出力APIのインスタンス生成
-            var synthes2 = new SpeechSynthesisUtterance();
-
-            //音声出力APIにパラメータを設定
-            synthes2.voiceURI = 2;            // 出力する音声の種類
-            synthes2.volume = 2;              // 出力する音声のボリューム
-            synthes2.rate = 1.4;                // 出力する音声の速さ
-            synthes2.pitch = 1;               // 出力する音声のピッチ(高さ)
-            //synthes.text = "for you sir always";     // 出力する文章
-            //synthes.text = "always a pleasure seeing you ,sir";
-            //synthes2.text = "OK! ";
-            //synthes2.lang = 'en-US';          // 出力する音声の言語
-            synthes2.text = "了解です！";     // 出力する文章
-            synthes2.lang = 'ja-JP';          // 出力する音声の言語
-
-            //synthes.text = "";     // 出力する文章
-            //synthes.lang = 'ja-JP';          // 出力する音声の言語
-
-            //音声出力
-            speechSynthesis.speak( synthes2 );
-
-            location.reload();
-
-          }
           else if ( finalTranscript.match(/Twitter/)){
             const url = 'https://twitter.com/home?lang=ja';
-            window.open(url, '_blank');
-
-            //音声出力APIのインスタンス生成
-            var synthes2 = new SpeechSynthesisUtterance();
-
-            //音声出力APIにパラメータを設定
-            synthes2.voiceURI = 2;            // 出力する音声の種類
-            synthes2.volume = 2;              // 出力する音声のボリューム
-            synthes2.rate = 1.4;                // 出力する音声の速さ
-            synthes2.pitch = 1;               // 出力する音声のピッチ(高さ)
-            //synthes.text = "for you sir always";     // 出力する文章
-            //synthes.text = "always a pleasure seeing you ,sir";
-            //synthes2.text = "OK! ";
-            //synthes2.lang = 'en-US';          // 出力する音声の言語
-            synthes2.text = "了解です！";     // 出力する文章
-            synthes2.lang = 'ja-JP';          // 出力する音声の言語
-
-            //synthes.text = "";     // 出力する文章
-            //synthes.lang = 'ja-JP';          // 出力する音声の言語
-
-            //音声出力
-            speechSynthesis.speak( synthes2 );
-
-            location.reload();
-
-          }
-          else if ( finalTranscript.match(/サウンドトラック/)){
-            urls = [
-              'https://music.youtube.com/watch?v=YlsQ6hjSZ8A&list=RDAMVMYlsQ6hjSZ8A',//ironman
-              'https://music.youtube.com/watch?v=b133aE8xWBQ&list=RDAMVMb133aE8xWBQ',//naruto
-
-            ]
-            let url = urls[Math.floor(Math.random() * urls.length)];
-            window.open(url, '_blank');
-
-            //音声出力APIのインスタンス生成
-            var synthes2 = new SpeechSynthesisUtterance();
-
-            //音声出力APIにパラメータを設定
-            synthes2.voiceURI = 2;            // 出力する音声の種類
-            synthes2.volume = 2;              // 出力する音声のボリューム
-            synthes2.rate = 1.4;                // 出力する音声の速さ
-            synthes2.pitch = 1;               // 出力する音声のピッチ(高さ)
-            //synthes.text = "for you sir always";     // 出力する文章
-            //synthes.text = "always a pleasure seeing you ,sir";
-            //synthes2.text = "OK! ";
-            //synthes2.lang = 'en-US';          // 出力する音声の言語
-            synthes2.text = "了解です！";     // 出力する文章
-            synthes2.lang = 'ja-JP';          // 出力する音声の言語
-
-            //synthes.text = "";     // 出力する文章
-            //synthes.lang = 'ja-JP';          // 出力する音声の言語
-
-            //音声出力
-            speechSynthesis.speak( synthes2 );
-
-            location.reload();
-
-          }
-          else if ( finalTranscript.match(/BGM/)){
-            urls = [
-              'https://music.youtube.com/watch?v=wVl2_RaQueM&list=PLzVx8uN-T8Q1Z1hjBkGHaPRVmqSYx7duh',
-              'https://music.youtube.com/watch?v=umwcs8CoeAM&list=RDAMVMumwcs8CoeAM',
-              'https://music.youtube.com/watch?v=wJhrKW7KBgE&list=RDAMVMumwcs8CoeAM',
-              'https://music.youtube.com/watch?v=anthqtxPkys&list=RDAMVManthqtxPkys',
-              'https://music.youtube.com/watch?v=_RD8BQ-fLMM&list=RDAMVM_RD8BQ-fLMM',
-              'https://music.youtube.com/watch?v=xFCaU9IPyd8&list=RDAMVMxFCaU9IPyd8',
-
-            ]
-            let url = urls[Math.floor(Math.random() * urls.length)];
-            window.open(url, '_blank');
-
-            //音声出力APIのインスタンス生成
-            var synthes2 = new SpeechSynthesisUtterance();
-
-            //音声出力APIにパラメータを設定
-            synthes2.voiceURI = 2;            // 出力する音声の種類
-            synthes2.volume = 2;              // 出力する音声のボリューム
-            synthes2.rate = 1.4;                // 出力する音声の速さ
-            synthes2.pitch = 1;               // 出力する音声のピッチ(高さ)
-            //synthes.text = "for you sir always";     // 出力する文章
-            //synthes.text = "always a pleasure seeing you ,sir";
-            //synthes2.text = "OK! ";
-            //synthes2.lang = 'en-US';          // 出力する音声の言語
-            synthes2.text = "了解です！";     // 出力する文章
-            synthes2.lang = 'ja-JP';          // 出力する音声の言語
-
-            //synthes.text = "";     // 出力する文章
-            //synthes.lang = 'ja-JP';          // 出力する音声の言語
-
-            //音声出力
-            speechSynthesis.speak( synthes2 );
-
-            location.reload();
-
-          }
-          else if ( finalTranscript.match(/曲/)){
-            var data = [
-              'https://music.youtube.com/watch?v=ad9O07zsqnY&list=PLAq_cRundDd6__ricYmfjGfNhYB6rO3UM', //アジカン1
-              'https://music.youtube.com/watch?v=Aq6gMHBobcA&list=PLOhZV6y-1RlOknTFHBSBdaQZTlS5XIRA4',//アジカン２
-              'https://music.youtube.com/watch?v=BCt9lS_Uv_Y&list=PLlBDt7gH3hiYJZrkkqK5tYYXbwbM2YyLJ',//ヨルシカ
-              'https://music.youtube.com/watch?v=U6IgltZmRbM&list=PLe5HBuHXrwaiXpp9NnGRDaUlv04f_Tjtb',//nico touch
-              'https://music.youtube.com/watch?v=J5Z7tIq7bco&list=PLJ2fdX2RRKzUbAv1Q9PFDzy7XeXSsMWtR',//スキマスイッチ
-              'https://music.youtube.com/watch?v=YnvDsYcEsbI&list=PLHZln64kZRVIG4V9jGO-GEySeeuFXP5Bo',//road of major
-              'https://music.youtube.com/watch?v=LgLMA1MR7iE&list=PLHcJQn3tSs7g9BRElcM7sUNByuddKj3Ir', //back number
-              'https://music.youtube.com/watch?v=zfkK6LzduSA&list=RDAMVMzfkK6LzduSA',//garnet crow
-              'https://music.youtube.com/watch?v=n5TG3Fxzft0&list=PLI-RxjqqZP0s5mlYy-iVyC9rfT-q0bU9V',//anison
-
-            ] ;
-            let url = data[Math.floor(Math.random()*data.length)];
-            window.open(url, '_blank');
-
-            //音声出力APIのインスタンス生成
-            var synthes2 = new SpeechSynthesisUtterance();
-
-            //音声出力APIにパラメータを設定
-            synthes2.voiceURI = 2;            // 出力する音声の種類
-            synthes2.volume = 2;              // 出力する音声のボリューム
-            synthes2.rate = 1.4;                // 出力する音声の速さ
-            synthes2.pitch = 1;               // 出力する音声のピッチ(高さ)
-            //synthes.text = "for you sir always";     // 出力する文章
-            //synthes.text = "always a pleasure seeing you ,sir";
-            //synthes2.text = "OK! ";
-            //synthes2.lang = 'en-US';          // 出力する音声の言語
-            synthes2.text = "了解です！";     // 出力する文章
-            synthes2.lang = 'ja-JP';          // 出力する音声の言語
-
-            //synthes.text = "";     // 出力する文章
-            //synthes.lang = 'ja-JP';          // 出力する音声の言語
-
-            //音声出力
-            speechSynthesis.speak( synthes2 );
-
-            location.reload();
-
-          }
-
-          else if ( finalTranscript.match(/洋楽/)){
-            urls = [
-              'https://www.youtube.com/watch?v=f5vdW0zyokI&list=PLs_k7zJ0XcV2e7fJBDYR4fwxw_cs-Uef2&index=1',
-              'https://music.youtube.com/watch?v=RgKAFK5djSk&list=RDCLAK5uy_n2ipOr2Q74DIMfuWf5glzFgv4X1XZRTVA',
-              'https://music.youtube.com/watch?v=XBNvolY6dHw&list=RDAMVMXBNvolY6dHw',
-              'https://music.youtube.com/watch?v=Kt-tLuszKBA&list=RDAMVMKt-tLuszKBA',
-            ]
-            let url = urls[Math.floor(Math.random() * urls.length)];
-            window.open(url, '_blank');
-
-            //音声出力APIのインスタンス生成
-            var synthes2 = new SpeechSynthesisUtterance();
-
-            //音声出力APIにパラメータを設定
-            synthes2.voiceURI = 2;            // 出力する音声の種類
-            synthes2.volume = 2;              // 出力する音声のボリューム
-            synthes2.rate = 1.4;                // 出力する音声の速さ
-            synthes2.pitch = 1;               // 出力する音声のピッチ(高さ)
-            //synthes.text = "for you sir always";     // 出力する文章
-            //synthes.text = "always a pleasure seeing you ,sir";
-            //synthes2.text = "OK! ";
-            //synthes2.lang = 'en-US';          // 出力する音声の言語
-            synthes2.text = "了解です！";     // 出力する文章
-            synthes2.lang = 'ja-JP';          // 出力する音声の言語
-
-            //synthes.text = "";     // 出力する文章
-            //synthes.lang = 'ja-JP';          // 出力する音声の言語
-
-            //音声出力
-            speechSynthesis.speak( synthes2 );
-
-            location.reload();
-
-          }
-
-
-
-          else if ( finalTranscript.match(/音楽/)){
-            var data = [
-            'https://music.youtube.com/watch?v=CS4f3jawFxY&list=RDCLAK5uy_mXVPog4cAEhi39RcmTCLhtbocf-DGa0jM',
-            'https://music.youtube.com/watch?v=qucqaX8AHeg&list=RDCLAK5uy_kvhjcPWzH7xZL-WnqGbiA_euQGy5_cbHI',
-            'https://music.youtube.com/watch?v=zgLAWm68XVg&list=RDCLAK5uy_k7wDaKweMyFw7tG8K2bFp00K2u4SN9Udg',
-            'https://music.youtube.com/watch?v=YqllOJ7ut10&list=RDCLAK5uy_khL5uRy4milJNYKDRwK571pXfYnshd16g',
-            'https://music.youtube.com/watch?v=yEA3qaB0dH8&list=RDMM',
-            ] ;
-            let url = data[Math.floor(Math.random()*data.length)];
-            window.open(url, '_blank');
-
-            //音声出力APIのインスタンス生成
-            var synthes2 = new SpeechSynthesisUtterance();
-
-            //音声出力APIにパラメータを設定
-            synthes2.voiceURI = 2;            // 出力する音声の種類
-            synthes2.volume = 2;              // 出力する音声のボリューム
-            synthes2.rate = 1.4;                // 出力する音声の速さ
-            synthes2.pitch = 1;               // 出力する音声のピッチ(高さ)
-            //synthes.text = "for you sir always";     // 出力する文章
-            //synthes.text = "always a pleasure seeing you ,sir";
-            //synthes2.text = "OK! ";
-            //synthes2.lang = 'en-US';          // 出力する音声の言語
-            synthes2.text = "了解です！";     // 出力する文章
-            synthes2.lang = 'ja-JP';          // 出力する音声の言語
-
-            //synthes.text = "";     // 出力する文章
-            //synthes.lang = 'ja-JP';          // 出力する音声の言語
-
-            //音声出力
-            speechSynthesis.speak( synthes2 );
-
-            location.reload();
-
-
-          }
-
-          else if ( finalTranscript.match(/ホームページ/)){
-            const url = 'https://hirokazuniimoto.github.io/portfolio/';
             window.open(url, '_blank');
 
             //音声出力APIのインスタンス生成
@@ -672,37 +555,6 @@ ol{position: absolute;
 
           }
 
-          else if ( finalTranscript.match(/WOWOW/)){
-            const url = 'https://www.wowow.co.jp/';
-            window.open(url, '_blank');
-
-            //音声出力APIのインスタンス生成
-            var synthes2 = new SpeechSynthesisUtterance();
-
-            //音声出力APIにパラメータを設定
-            synthes2.voiceURI = 2;            // 出力する音声の種類
-            synthes2.volume = 2;              // 出力する音声のボリューム
-            synthes2.rate = 1.4;                // 出力する音声の速さ
-            synthes2.pitch = 1;               // 出力する音声のピッチ(高さ)
-            //synthes.text = "for you sir always";     // 出力する文章
-            //synthes.text = "always a pleasure seeing you ,sir";
-            //synthes2.text = "OK! ";
-            //synthes2.lang = 'en-US';          // 出力する音声の言語
-            synthes2.text = "了解です！";     // 出力する文章
-            synthes2.lang = 'ja-JP';          // 出力する音声の言語
-
-            //synthes.text = "";     // 出力する文章
-            //synthes.lang = 'ja-JP';          // 出力する音声の言語
-
-            //音声出力
-            speechSynthesis.speak( synthes2 );
-
-            location.reload();
-
-          }
-
-
-
           else if ( finalTranscript.match(/翻訳/)){
             const url = 'https://www.google.com/search?sxsrf=ALeKk029K5JKuBaTfxrEr7Q9FeKo-Jiwlw%3A1594909252729&ei=RGIQX-aILOitmAW-j4GwDQ&q=%E7%BF%BB%E8%A8%B3&oq=%E7%BF%BB%E8%A8%B3&gs_lcp=CgZwc3ktYWIQAzIECCMQJzIECCMQJzIECCMQJzIMCAAQsQMQsQMQBBAlMgYIABAEECUyDAgAELEDELEDEAQQJTIGCAAQBBAlMgYIABAEECU6BggAEAcQHjoICAAQCBAKEB46BggAEAgQHlDLwc_PAljLwc_PAmCCw8_PAmgBcAB4AIABggKIAYEEkgEFMC4yLjGYAQCgAQGqAQdnd3Mtd2l6&sclient=psy-ab&ved=0ahUKEwjmutT7-9HqAhXoFqYKHb5HANYQ4dUDCAw&uact=5';
             window.open(url, '_blank');
@@ -732,36 +584,7 @@ ol{position: absolute;
             location.reload();
 
           }
-          else if ( finalTranscript.match(/天気/)){
-            const url = 'https://weathernews.jp/onebox/34.700312/135.142921/q=%E5%85%B5%E5%BA%AB%E7%9C%8C%E7%A5%9E%E6%88%B8%E5%B8%82&v=55de912b81668726db09e8d88c998735065f7c6949921b6869818675c962c842&temp=c&lang=ja';
-            window.open(url, '_blank');
 
-
-            //音声出力APIのインスタンス生成
-            var synthes2 = new SpeechSynthesisUtterance();
-
-            //音声出力APIにパラメータを設定
-            synthes2.voiceURI = 2;            // 出力する音声の種類
-            synthes2.volume = 2;              // 出力する音声のボリューム
-            synthes2.rate = 1.4;                // 出力する音声の速さ
-            synthes2.pitch = 1;               // 出力する音声のピッチ(高さ)
-            //synthes.text = "for you sir always";     // 出力する文章
-            //synthes.text = "always a pleasure seeing you ,sir";
-            //synthes2.text = "OK! ";
-            //synthes2.lang = 'en-US';
-                   // 出力する音声の言語
-            synthes2.text = "本日の神戸市の天気です！";     // 出力する文章
-            synthes2.lang = 'ja-JP';          // 出力する音声の言語
-
-            //synthes.text = "";     // 出力する文章
-            //synthes.lang = 'ja-JP';          // 出力する音声の言語
-
-            //音声出力
-            speechSynthesis.speak( synthes2 );
-
-            location.reload();
-
-          }
           else if ( finalTranscript.match(/マルチエンジン/)){
             const url = 'http://multisearchengines.herokuapp.com/';
             window.open(url, '_blank');
@@ -823,12 +646,8 @@ ol{position: absolute;
 
           }
 
-          else if ( finalTranscript.match(/ミュート/)){
-            location.reload();
-          }
-
           else if ( finalTranscript.match(/新規ウィンドウ/)){
-            window.open('https://hirokazuniimoto.github.io/FLY-japanese-/', 'newwindow', 'width=700,height=800,top=20,left=1550');
+            window.open('https://hirokazuniimoto.github.io/FLY-japanese-/', 'newwindow', 'width=700,height=760,top=20,left=1550');
 
 
             //音声出力APIのインスタンス生成
@@ -856,24 +675,14 @@ ol{position: absolute;
 
           }
 
+          else if ( finalTranscript.match(/一時停止解除/)){
+            location.href = 'http://localhost:5000/';
+          }
 
-
-          //アーティスト　試作
-          /*
-          var artisturl = {
-               "ミスチル": https://music.youtube.com/watch?v=9lVPAWLWtWc&list ,
-               "ヨルシカ": https://music.youtube.com/watch?v=AOySfMfNMSA&list ,
-            };
-          var artistlist = [
-            "ミスチル",
-            "ヨルシカ",
-
-          ];
-          for (let i = 0; i < artistlist.length; i++) {
-            if ( finalTranscript.match(/artistlist[i]/)){
-              var artist = artistlist[i];
-              const url = artisturl[artist];
-              window.open(url, '_blank');
+          for(var i2 = 0; i2 < localStorage.length; i2++){
+            k=localStorage.key(i2)
+            if (finalTranscript.match(k)){
+              window.open(localStorage.getItem(k), '_blank');
 
               //音声出力APIのインスタンス生成
               var synthes2 = new SpeechSynthesisUtterance();
@@ -895,13 +704,9 @@ ol{position: absolute;
 
               //音声出力
               speechSynthesis.speak( synthes2 );
-
-              location.reload();
-
+              break;
             }
-          }*/
-          //アーティスト　ここまで
-
+          }
 
         }
 
@@ -911,9 +716,6 @@ ol{position: absolute;
       startBtn.onclick = () => {
         recognition.start();
       }
-      //stopBtn.onclick = () => {
-      //  recognition.stop();
-      //}
 
 </script>
 
@@ -966,7 +768,54 @@ window.addEventListener( 'resize', function(){
 
 </script>
 
+<script language="javascript" type="text/javascript">
 
+    // 保存
+    function save() {
+      var mydata1 = document.getElementById("mydata_in1").value;
+      var mydata2 = document.getElementById("mydata_in2").value;
+      console.log(`mydata_in2 = ${mydata_in2}`);
+      if (!mydata1){
+        alert('Requestを入力してください。');
+      }
+      else{
+        localStorage.setItem(mydata1, mydata2);
+        //k=localStorage.key(0)
+        document.getElementById('mydata_out2').innerHTML +="New!  Request「"+ mydata1+" 」　URL："+mydata2 + '<br>';
+      }
+
+    }
+
+    //消去
+    function remove() {
+      var mydata1 = document.getElementById("mydata_in1").value;
+      var mydata2 = document.getElementById("mydata_in2").value;
+      console.log(`mydata_in2 = ${mydata_in2}`);
+      localStorage.removeItem(mydata1)
+      alert("「"+mydata1+'」Requestを消去しました。');
+    }
+
+    //初期化
+    function reset() {
+      localStorage.clear()
+      alert('すべての項目を初期化しました。');
+    }
+
+
+    window.onload = () => {
+      var g=0
+      for(var i = 0; i < localStorage.length; i++){
+        console.log(localStorage.key(i));
+        k=localStorage.key(i)
+        if (k=="地域"){
+          continue;
+        }
+        g+=1
+        document.getElementById('mydata_out').innerHTML +=g+". Request「"+ localStorage.key(i) +" 」　URL："+localStorage.getItem(k) + '<br>';
+      }
+
+    }
+  </script>
 
 </body>
 </html>
